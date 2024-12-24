@@ -1,0 +1,132 @@
+body {
+    position: relative;
+    background: black;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.list-group-item {
+    background-color: #333;
+    color: #fff;
+}
+
+.list-group-item:hover {
+    background-color: #555;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+main {
+    min-height: calc(100vh - 130px);
+}
+
+#pikachu {
+    position: absolute;
+    bottom: 0;
+    left: -100px;
+    width: 100px;
+    animation: correr 5s linear infinite;
+}
+
+@keyframes correr {
+    0% {
+        left: -100px;
+    }
+
+    100% {
+        left: 95%;
+    }
+}
+
+footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.star.small {
+    --star-width: 3vh;
+    --star-height: 3vh;
+}
+
+.star.medium {
+    --star-width: 5vh;
+    --star-height: 5vh;
+}
+
+.star {
+    --star-width: 7vh;
+    --star-height: 7vh;
+    --blur-radius: calc(var(--star-width) / 2);
+    width: var(--star-width);
+    height: var(--star-height);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    animation: starlight 1.2s linear infinite;
+}
+
+.star::before,
+.star::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    z-index: 2;
+}
+
+.star::before {
+    width: 100%;
+    height: 10%;
+    border-radius: 50%;
+}
+
+.star::after {
+    height: 100%;
+    width: 10%;
+    border-radius: 50%;
+}
+
+@keyframes starlight {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.2) rotateZ(45deg);
+        filter: blur(var(--blur-radius));
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.4) rotateZ(90deg);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 0.2;
+        transform: scale(0.2) rotateZ(135deg);
+        filter: blur(var(--blur-radius));
+    }
+}
+
+#infotext {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.col-md-6 {
+    padding: 1.5rem;
+}
+
+.col-md-6:first-child {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
